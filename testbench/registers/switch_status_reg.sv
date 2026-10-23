@@ -1,6 +1,3 @@
-`include "uvm_macros.svh"
-import uvm_pkg::*;
-
 class switch_status_reg extends uvm_reg;
     
     // Factory registration
