@@ -1,6 +1,3 @@
-`include "uvm_macros.svh"
-import uvm_pkg::*;
-
 class device_id_reg extends uvm_reg;
     
     // Factory registration
