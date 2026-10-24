@@ -27,7 +27,7 @@ class gen_status_reg extends uvm_reg;
         running.configure(this, 1, 0, "RO", 1, 1'b0, 1, 0, 0);
         done.configure(this, 1, 1, "RO", 1, 1'b0, 1, 0, 0);
         fsm.configure(this, 2, 2, "RO", 1, 2'b0, 1, 0, 0);
-        reserved1.configure(this, 4, 3,  "RO", 1, 4'b0, 1, 0, 0);
+        reserved1.configure(this, 4, 4,  "RO", 1, 4'b0, 1, 0, 0);
         remaining.configure(this, 16, 8, "RO", 1, 16'b0, 1, 0, 1);
         reserved2.configure(this, 8, 24, "RO", 1, 8'b0, 1, 0, 1);
     endfunction: build
