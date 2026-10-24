@@ -10,7 +10,7 @@ class stat_tx_reg extends uvm_reg;
 
     virtual function void build();
         tx_packets = uvm_reg_field::type_id::create("tx_packets");
-        reserved   = uvm_reg_field::type_id::create("reserved");
+        reserved = uvm_reg_field::type_id::create("reserved");
 
         tx_packets.configure(this, 16,  0, "RO", 1, 16'h0000, 1, 0, 1);
         reserved.configure(this, 16, 16, "RO", 0, 16'h0000, 1, 0, 1);
