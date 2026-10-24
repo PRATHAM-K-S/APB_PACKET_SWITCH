@@ -1,0 +1,27 @@
+class port_enable_reg extends uvm_reg;
+    `uvm_object_utils(port_enable_reg)
+
+    rand uvm_reg_field port0_en;
+    rand uvm_reg_field port1_en;
+    rand uvm_reg_field port2_en;
+    rand uvm_reg_field port3_en;
+    uvm_reg_field      reserved;
+
+    function new(string name = "port_enable_reg");
+        super.new(name, 32, UVM_NO_COVERAGE);
+    endfunction
+
+    virtual function void build();
+        port0_en = uvm_reg_field::type_id::create("port0_en");
+        port1_en = uvm_reg_field::type_id::create("port1_en");
+        port2_en = uvm_reg_field::type_id::create("port2_en");
+        port3_en = uvm_reg_field::type_id::create("port3_en");
+        reserved = uvm_reg_field::type_id::create("reserved");
+
+        port0_en.configure(this, 1, 0, "RW", 0, 1'b1, 1, 1, 0);
+        port1_en.configure(this, 1, 1, "RW", 0, 1'b1, 1, 1, 0);
+        port2_en.configure(this, 1, 2, "RW", 0, 1'b1, 1, 1, 0);
+        port3_en.configure(this, 1, 3, "RW", 0, 1'b1, 1, 1, 0);
+        reserved.configure(this, 28, 4, "RO", 0, 28'b0, 1, 0, 0);
+    endfunction
+endclass : port_enable_reg
